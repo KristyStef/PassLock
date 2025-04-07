@@ -35,8 +35,6 @@ void Menu()
             break;
         case 3:
             break;
-        default:
-            break;
     }
 }
 
@@ -57,9 +55,23 @@ string Generate(int l, int u, int n, int s)
     };
     for (int i = 0; i < total; i++)
     {
-        
-        password.Append()
+        switch (rnd.Next(1, 4))
+        {
+            case 1:
+                password += lowerCase[rnd.Next(0, lowerCase.Length)];
+                        break;
+            case 2:
+                password += upperCase[rnd.Next(0, upperCase.Length)];
+                break;
+            case 3:
+                password += numbers[rnd.Next(0, numbers.Length)];
+                break;
+            case 4:
+                password += specialCharacters[rnd.Next(0, specialCharacters.Length)];
+                break;
+        }
     }
+    return password;
 };
 
 Menu();
